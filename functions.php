@@ -400,6 +400,22 @@ function extendable_theme_subscriptions_submit_button_text( $order_button_text )
 /**
  * Include custom checkout configuration
  * @since 2022-02-12 Larry Judd [codeable]
+ * @return HTML 
+ */
+add_action('extendable_theme_checkout_logo', 'extendable_theme_checkout_logo_render');
+function extendable_theme_checkout_logo_render() {
+	if( !is_checkout() ) return false;
+
+	echo '<figure class="extndbl-chkout-steps">
+		<a href="' . get_home_url() . '/pricing' . '" title="pricing page">
+		<img src="' . get_theme_file_uri( '/assets/images/feat-lrg.png' ) . '" 
+		width="200" height="180" class="extendable-checkout-logo" alt="Extendable"/></a>
+		</figure>';
+}
+
+/**
+ * Include custom checkout configuration
+ * @since 2022-02-12 Larry Judd [codeable]
  * @maybe_use require get_template_directory() . '/inc/extendable-custom-checkout.php'; 
  */
 add_action('extendable_theme_payments_details', 'extendable_theme_payments_details_render');
