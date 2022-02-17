@@ -28,8 +28,11 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 }
 
 ?>
-	<a href="<?php echo get_home_url() . '/pricing'; ?>" title="pricing page">
-		<figure class="extndbl-chkout-steps"></figure></a>
+	<div class="extndbl-checkout-logo">
+		<?php if ( function_exists( 'extendable_theme_checkout_logo_render' ) ):
+			echo do_action('extendable_theme_checkout_logo'); endif; 
+		?>
+	</div>
 		<div class="extndbl-wide">
 
         <?php if( function_exists('extendable_theme_checkout_progress_bar_render')):
