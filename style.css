@@ -418,3 +418,4 @@ Theme URI: https://extendify.com/extendable Author: Extendify.com Author URI: ht
 .woocommerce table.shop_table tfoot td {
   padding: 0;
 }
+.woocommerce form.checkout_coupon{border-color:transparent;} 
